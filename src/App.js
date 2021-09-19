@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+
+import {Divider, Segment, Grid, Container} from 'semantic-ui-react';
+
+import Header from './components/Header/Header';
+import  InputForm  from './components/Input/Input';
+import NumberDisplay from './components/NumberDisplay/NumberDisplay';
+import ColorDisplay from './components/ColorDisplay/ColorDisplay';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment> 
+      <Header />
+      <Segment>
+        <Grid style={{height: '300px'}}columns={2} relaxed="very">
+          <Grid.Column>
+      <NumberDisplay />
+      </Grid.Column>
+          <Grid.Column>
+      <ColorDisplay />
+      </Grid.Column>
+      </Grid>
+      <Divider vertical/>
+      </Segment>
+      <Container>
+      <InputForm/>
+      </Container>
+    </React.Fragment>
   );
 }
 
