@@ -1,14 +1,15 @@
 import './App.css';
 import React from 'react';
-
 import {Divider, Segment, Grid, Container} from 'semantic-ui-react';
-
 import Header from './components/Header/Header';
 import  InputForm  from './components/Input/Input';
 import NumberDisplay from './components/NumberDisplay/NumberDisplay';
 import ColorDisplay from './components/ColorDisplay/ColorDisplay';
 
-function App() {
+
+
+
+const App = () => {
   return (
     <React.Fragment> 
       <Header />
@@ -29,5 +30,7 @@ function App() {
     </React.Fragment>
   );
 }
+
+
 
 export default App;
