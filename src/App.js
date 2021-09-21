@@ -5,11 +5,11 @@ import Header from './components/Header/Header';
 import  InputForm  from './components/Input/Input';
 import NumberDisplay from './components/NumberDisplay/NumberDisplay';
 import ColorDisplay from './components/ColorDisplay/ColorDisplay';
+import {connect} from 'react-redux';
 
 
 
-
-const App = () => {
+const App = ({currentColor, currentNumber}) => {
   return (
     <React.Fragment> 
       <Header />
@@ -25,12 +25,16 @@ const App = () => {
       <Divider vertical/>
       </Segment>
       <Container>
-      <InputForm/>
+      <InputForm currentNumber={currentNumber} currentColor={currentColor} />
       </Container>
     </React.Fragment>
   );
 }
 
+const mapStateToProps = state => ({
+  currentNumber: state.currentNumber,
+  currentColor: state.currentColor
+})
 
 
-export default App;
+export default connect(mapStateToProps)(App);

@@ -8,3 +8,12 @@ export const setNumber = number => {
         }
     }
 }
+
+export const setColor = color => {
+    return {
+        type: actionTypes.SET_COLOR,
+        payload: {
+            currentColor: color
+        }
+    }
+}
